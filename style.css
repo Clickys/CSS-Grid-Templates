@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 10vh 5vh 50vh 10vh 10vh auto;
+    grid-template-areas:
+    "header header"
+    "nav nav"
+    "section aside"
+    "article aside"
+    "footer footer";
+}
+
+.wrapper > header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-area: header;
+    grid-template-areas:
+    ". img-logo search-container search-container side-menu";
+    padding: 10px;
+    background-color: white;
+}
+
+header > img {
+    grid-area: img-logo;
+    justify-self: center;
+    align-self: center;
+}
+
+header > div.search-container {
+    grid-area: search-container;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "input-search input-search-btn";
+    padding: 10px;
+}
+header > div > input {
+    grid-area: input-search;
+    height: 5vh;
+    align-self: center;
+}
+
+header > div > .input-search-btn {
+    grid-area: input-search-btn;
+    align-self: center;
+    color: grey;
+    font-size: 20px;
+    padding: 5px;
+    grid-column-start: 2;
+
+}
+header > div.side-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "live-help stores account cart";
+    grid-area: side-menu;
+    align-self: center;
+    justify-self: start;
+    text-align: center;
+}
+
+header > div.side-menu > span {
+    border-right: 1px solid grey;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+header > div.side-menu > span > i {
+    display: block;
+    text-align: center;
+    padding: 15px;
+    font-size: 20px;
+    color: grey;
+}
+
+.wrapper > nav {
+    grid-area: nav;
+    background-color: #effc64;
+}
+
+.wrapper > nav > ul {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:
+    ". home practice news contact .";
+    padding: 10px;
+    list-style-type: none;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.wrapper > nav > ul > .home {
+    grid-area: home;
+}
+
+.wrapper > nav > ul > .practice {
+    grid-area: practice;
+}
+
+.wrapper > nav > ul > .news {
+    grid-area: news;
+}
+
+.wrapper > nav > ul > .contact {
+    grid-area: contact;
+}
+
+.wrapper > section {
+    grid-area: section;
+    background-color: #64e7fc;
+}
+
+.wrapper > article {
+    grid-area: article;
+    background-color: #fc64c9;
+}
+
+.wrapper > aside {
+    grid-area: aside;
+    background-color: #64a5fc;
+}
+
+.wrapper > footer {
+    grid-area: footer;
+    background-color: #fc9964
+}
