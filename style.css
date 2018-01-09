@@ -1,19 +1,32 @@
-* {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: inherit;
 }
 
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color #777
+    padding: 3rem;
+    box-sizing: border-box;
+}
 .wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 10vh 5vh 50vh 10vh 10vh auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 10vh 32vh 50vh 10vh 10vh auto;
     grid-template-areas:
-    "header header"
-    "nav nav"
-    "section aside"
-    "article aside"
-    "footer footer";
+    "header header header"
+    "nav nav nav"
+    "aside-left section aside-right"
+    "footer footer footer";
 }
 
 .wrapper > header {
@@ -22,7 +35,7 @@
     grid-area: header;
     grid-template-areas:
     ". img-logo search-container search-container side-menu";
-    padding: 10px;
+    padding: 1rem;
     background-color: white;
 }
 
@@ -38,7 +51,7 @@ header > div.search-container {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
     "input-search input-search-btn";
-    padding: 10px;
+    padding: 1rem;
 }
 header > div > input {
     grid-area: input-search;
@@ -50,8 +63,8 @@ header > div > .input-search-btn {
     grid-area: input-search-btn;
     align-self: center;
     color: grey;
-    font-size: 20px;
-    padding: 5px;
+    font-size: 2rem;
+    padding: .5rem;
     grid-column-start: 2;
 
 }
@@ -64,52 +77,163 @@ header > div.side-menu {
     align-self: center;
     justify-self: start;
     text-align: center;
+    animation: sideMenuMoveLeft 2s ease-out;
 }
 
 header > div.side-menu > span {
-    border-right: 1px solid grey;
-    padding-left: 5px;
-    padding-right: 5px;
+    border-right: .1rem solid grey;
+    padding-left: .5rem;
+    padding-right: .5rem;
 }
 
 header > div.side-menu > span > i {
     display: block;
     text-align: center;
-    padding: 15px;
-    font-size: 20px;
+    padding: 1.5rem;
+    font-size: 2rem;
     color: grey;
 }
 
 .wrapper > nav {
+    display: grid;
+    grid-template-columns: 1fr;
     grid-area: nav;
-    background-color: #effc64;
+    background-color: #fff;
 }
 
-.wrapper > nav > ul {
+.wrapper > nav > div {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-areas:
-    ". home practice news contact .";
-    padding: 10px;
+    ". shop-dog shop-cat shop-fish shop-bird .";
+    padding: 1rem;
     list-style-type: none;
-    font-size: 20px;
+    font-size: 1.5rem;
     font-weight: 600;
+
 }
 
-.wrapper > nav > ul > .home {
-    grid-area: home;
+.wrapper > nav > .main-menu > div {
+    border-right: .1rem dashed grey;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.wrapper > nav > div > .shop-dog {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 25% 25% 25% auto;
+    grid-template-areas:
+    "dog-heading"
+    "dog-shop-now"
+    "dog-img";
+    grid-area: shop-dog;
+
 }
 
-.wrapper > nav > ul > .practice {
-    grid-area: practice;
+
+.wrapper > nav > div > .shop-dog > h3 {
+    grid-area: dog-heading;
 }
 
-.wrapper > nav > ul > .news {
-    grid-area: news;
+.wrapper > nav > div > .shop-dog > a {
+    grid-area: dog-shop-now;
+    text-decoration: none;
 }
 
-.wrapper > nav > ul > .contact {
-    grid-area: contact;
+.wrapper > nav > div > .shop-dog > img {
+    grid-area: dog-img;
+    justify-self: center;
+}
+
+.wrapper > nav > div > .shop-cat {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 25% 25% 25% auto;
+    grid-template-areas:
+    "cat-heading"
+    "cat-shop-now"
+    "cat-img";
+    grid-area: shop-cat;
+
+}
+
+.wrapper > nav > div > .shop-cat > h3 {
+    grid-area: cat-heading;
+}
+
+.wrapper > nav > div > .shop-cat > a {
+    grid-area: cat-shop-now;
+    text-decoration: none;
+}
+
+.wrapper > nav > div > .shop-cat > img {
+    grid-area: cat-img;
+    justify-self: center;
+}
+
+.wrapper > nav > div > .shop-fish {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 25% 25% 25% auto;
+    grid-template-areas:
+    "fish-heading"
+    "fish-shop-now"
+    "fish-img";
+    grid-area: shop-fish;
+
+}
+
+.wrapper > nav > div > .shop-fish > h3 {
+    grid-area: fish-heading;
+}
+
+.wrapper > nav > div > .shop-fish > a {
+    grid-area: fish-shop-now;
+    text-decoration: none;
+}
+
+.wrapper > nav > div > .shop-fish > img {
+    grid-area: fish-img;
+    justify-self: center;
+}
+
+.wrapper > nav > div > .shop-bird {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 25% 25% 25% auto;
+    grid-template-areas:
+    "bird-heading"
+    "bird-shop-now"
+    "bird-img";
+    grid-area: shop-bird;
+
+}
+
+.wrapper > nav > div > .shop-bird > h3 {
+    grid-area: bird-heading;
+}
+
+.wrapper > nav > div > .shop-bird > a {
+    grid-area: bird-shop-now;
+    text-decoration: none;
+}
+
+.wrapper > nav > div > .shop-bird > img {
+    grid-area: bird-img;
+    justify-self: center;
+}
+
+.wrapper > nav > div > .shop-cat {
+    grid-area: shop-cat;
+}
+
+.wrapper > nav > div > .shop-fish {
+    grid-area: shop-fish;
+}
+
+.wrapper > nav > div > .shop-bird {
+    grid-area: shop-bird;
 }
 
 .wrapper > section {
@@ -122,12 +246,36 @@ header > div.side-menu > span > i {
     background-color: #fc64c9;
 }
 
-.wrapper > aside {
-    grid-area: aside;
+.wrapper > .aside-right {
+    grid-area: aside-right;
+    background-color: #64a5fc;
+}
+
+.wrapper > .aside-left {
+    grid-area: aside-left;
     background-color: #64a5fc;
 }
 
 .wrapper > footer {
     grid-area: footer;
     background-color: #fc9964
+}
+
+@keyframes sideMenuMoveLeft {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+
+    }
+
+    80% {
+        transform: translateX(-10rem);
+        opacity: 1;
+
+    }
+
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
 }
