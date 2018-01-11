@@ -9,15 +9,16 @@ let slider = {
         return this.i;
     },
     prev: function() {
-        this.i += 1;
+        this.i -= 1;
         return this.i;
     }
 };
 
 function changeImg() {
-    debugger;
-    let imgSrc = document.getElementsByClassName('slider-section__img')[0];
-    imgSrc.setAttribute('src', slider.imgArray[slider.i]);
+
+    let sliderSection = document.getElementsByClassName('slider-section__img--slider')[0];
+    sliderSection.setAttribute('src', slider.imgArray[slider.i]);
+    console.log(slider.i, 'auto');
     if (slider.i < slider.imgArray.length - 1) {
         slider.i++;
     } else {
@@ -28,15 +29,15 @@ function changeImg() {
 
 
 function nextImg() {
-    let slideshow = document.getElementsByClassName('slideshow')[0];
-    slideshow.setAttribute('src', slider.imgArray[slider.next()]);
-    if (slider.i < slider.imgArray.length) {
-        slider.i++;
+    let sliderSection = document.getElementsByClassName('slider-section__img--slider')[0];
+    if (slider.i < slider.imgArray.length - 1 ) {
+        sliderSection.setAttribute('src', slider.imgArray[slider.i++]);
     } else {
+        sliderSection.setAttribute('src', slider.imgArray[slider.i]);
         slider.i = 0;
     }
 }
 
-//document.getElementById('next').addEventListener('click', nextImg);
-
+let nextEl = document.getElementsByClassName('aside-left')[0];
+nextEl.addEventListener('click', nextImg);
 window.addEventListener('load', changeImg);

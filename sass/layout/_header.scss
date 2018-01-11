@@ -1,0 +1,83 @@
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-area: header;
+    grid-template-areas:
+    ". img-logo search-container search-container side-menu";
+    padding: 1rem;
+    background-color: $white-color;
+
+
+    &__logo {
+        grid-area: img-logo;
+        justify-self: center;
+        align-self: center;
+    }
+}
+
+
+.search-container {
+    grid-area: search-container;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "input-search input-search-btn";
+    padding: 1rem;
+
+    &__input {
+        grid-area: input-search;
+        height: 5vh;
+        align-self: center;
+    }
+
+    &__search-icon {
+        grid-area: input-search-btn;
+        align-self: center;
+        color: $dark-grey-color;
+        font-size: 2rem !important;
+        padding: .5rem;
+        grid-column-start: 2;
+    }
+}
+
+.side-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "side-menu__toolbar__help side-menu__toolbar__store side-menu__toolbar__account side-menu__toolbar__shop";
+    grid-area: side-menu;
+    align-self: center;
+    justify-self: start;
+    text-align: center;
+    animation: sideMenuMoveLeft 2s ease-out;
+
+    &__toolbar {
+        border-right: .1rem solid $dark-grey-color;
+        padding: 2rem;
+
+        &__help {
+            grid-area: side-menu__toolbar__help;
+        }
+
+        &__store {
+            grid-area: side-menu__toolbar__store;
+        }
+
+        &__account {
+           grid-area:  side-menu__toolbar__account;
+        }
+
+        &__shop {
+            grid-area: side-menu__toolbar__shop;
+        }
+        &__icon {
+            display: block;
+            color: $dark-grey-color;
+        }
+        span {
+            display: block;
+        }
+    }
+
+    
+}

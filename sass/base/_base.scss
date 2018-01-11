@@ -1,0 +1,28 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 10vh 5vh 55vh 10vh 10vh auto;
+    grid-row-gap: 3rem;
+    grid-template-areas:
+    "header header header"
+    "discount-block discount-block discount-block"
+    "aside-left section aside-right"
+    "nav nav nav"
+    "footer footer footer";
+}

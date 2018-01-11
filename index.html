@@ -1,76 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-     <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-     <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
 
-</head>
-<body>
+    </head>
 
-    <div class="wrapper">
+    <body>
 
-        <header>
-                <img src="img/header-logo.webp" alt="">
+        <div class="wrapper">
+            <header class="header">
+                <img class="header__logo" src="img/header-logo.webp" alt="">
                 <div class="search-container">
-                    <input type="search" class="input-search" name="q" placeholder="Search the site..." aria-label="Search through site content">
-                    <i class="fa fa-search input-search-btn" aria-hidden="true"></i>
+                    <input type="search" class="search-container__input" name="q" placeholder="Search the site..." aria-label="Search through site content">
+                    <i class="fa fa-search  search-container__search-icon" aria-hidden="true"></i>
                 </div>
                 <div class="side-menu">
-                    <span>
-                        <i class="fa fa-commenting-o live-help-icon" aria-hidden="true"> </i>
-                        Live Help
-                    </span>
-                    <span>
-                        <i class="fa fa-map-marker" aria-hidden="true"></i>
-                        Stores
-                    </span>
-                    <span>
-                        <i class="fa fa-users" aria-hidden="true"></i>
-                        Account
-                    </span>
-                    <span>
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                        Cart
-                    </span>
+                    <p class="side-menu__toolbar side-menu__toolbar__help">
+                            <i class="fa fa-3x fa-commenting  side-menu__icon" aria-hidden="true"> </i>
+                            <span>Live Help</span>
+                    </p>
+                    <p class="side-menu__toolbar side-menu__toolbar__store">
+                            <i class="fa fa-3x fa-map-marker side-menu__toolbar--icon" aria-hidden="true"></i>
+                            <span>Stores</span>
+                    </p>
+                    <p class="side-menu__toolbar side-menu__toolbar__account">
+                            <i class="fa fa-3x fa-users side-menu__toolbar--icon" aria-hidden="true"></i>
+                            <span>Account</span>
+                    </p>
+                    <p class="side-menu__toolbar side-menu__toolbar__shop">
+                            <i class="fa fa-3x fa-shopping-cart side-menu__toolbar--icon" aria-hidden="true"></i>
+                            <span>Cart</span>
+                    </p>
                 </div>
-        </header>
-        <nav>
-            <div class="main-menu">
-                <div class="shop-dog">
-                    <h3>Dog</h3>
-                    <a href="#"> Shop Now </a>
-                    <img src="/img/dog-menu-icon.jpg">
+            </header>
+            <nav class="nav">
+                <div class="main-menu">
+                    <div class="main-menu__option main-menu__shop-dog">
+                        <h3 class="main-menu__shop-dog--name">Dog</h3>
+                        <a href="#" class="main-menu__shop-dog--buy"> Shop Now </a>
+                        <img src="/img/dog-menu-icon.jpg" class="main-menu__shop-dog--icon">
+                    </div>
+                    <div class="shop-cat  main-menu__option main-menu__shop-cat">
+                        <h3 main-menu__shop-cat--name>Cat</h3>
+                        <a href="#" main-menu__shop-cat--buy> Shop Now </a>
+                        <img src="/img/cat-menu-icon.jpg" clsas="main-menu__shop-cat--icon">
+                    </div>
+                    <div class="main-menu__option  main-menu__shop-fish">
+                        <h3 class="main-menu__shop-fish--name">Fish</h3>
+                        <a href="#" class="main-menu__shop-fish--buy"> Shop Now </a>
+                        <img src="/img/fish-menu-icon.jpg" class="main-menu__shop-fish--icon">
+                    </div>
+                    <div class="main-menu__option main-menu__shop-bird">
+                        <h3 class="main-menu__shop-bird--name">Bird</h3>
+                        <a href="#" class="main-menu__shop-bird--buy"> Shop Now </a>
+                        <img src="/img/bird-menu-icon.jpg" class="main-menu__shop-bird--icon">
+                    </div>
                 </div>
-                <div class="shop-cat">
-                    <h3>Cat</h3>
-                    <a href="#"> Shop Now </a>
-                    <img src="/img/cat-menu-icon.jpg">
-                </div>
-                <div class="shop-fish">
-                    <h3>Fish</h3>
-                    <a href="#"> Shop Now </a>
-                    <img src="/img/fish-menu-icon.jpg">
-                </div>
-                <div class="shop-bird">
-                    <h3>Bird</h3>
-                    <a href="#"> Shop Now </a>
-                    <img src="/img/bird-menu-icon.jpg">
-                </div>
-            </div>
-        </nav>
-        <aside class="aside-left">1</aside>
-        <section>Section</section>
-        <article>Article</article>
-        <aside class="aside-right">Aside</aside>
-        <footer>Footer</footer>
+            </nav>
+            <section class="discount-block">
+                fdfd
+                <h3 class="discount-block--discount">Free shiping!</h3>
+            </section>
+            <aside class="aside-left">
+                Next
+            </aside>
+            <section class="slider-section">
+                <img src="" alt="" class="slider-section__img--slider">
+            </section>
+            <aside class="aside-right">Aside</aside>
+            <footer>Footer</footer>
 
-    </div>
+        </div>
 
-</body>
+    </body>
+    <script src="js/script.js"></script>
 </html>

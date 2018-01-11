@@ -1,0 +1,128 @@
+.nav {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-area: nav;
+    background-color: $white-color;
+}
+
+.main-menu {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:
+    ". shop-dog shop-cat shop-fish shop-bird .";
+    padding: 1rem;
+    list-style-type: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    &__option {
+        border-right: .1rem dashed $dark-grey-color;
+        padding: 1rem;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    &__shop-dog {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10% 10% 25% auto;
+        grid-template-areas:
+        "dog-heading"
+        "dog-shop-now"
+        "dog-img";
+        grid-area: shop-dog;
+
+        &--name {
+            grid-area: dog-heading;
+        }
+
+        &--buy {
+            grid-area: dog-shop-now;
+            text-decoration: none;
+        }
+
+        &--icon {
+            grid-area: dog-img;
+            justify-self: center;
+        }
+    
+    }
+
+}
+.main-menu__shop-cat {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% 10% 25% auto;
+    grid-template-areas:
+    "cat-heading"
+    "cat-shop-now"
+    "cat-img";
+    grid-area: shop-cat;
+
+    &--name {
+        grid-area: cat-heading;
+    }
+
+    &--buy {
+        grid-area: cat-shop-now;
+        text-decoration: none;
+    }
+
+    &--icon {
+        grid-area: cat-img;
+        justify-self: center;
+    }
+
+}
+
+.main-menu__shop-fish {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% 10% 25% auto;
+    grid-template-areas:
+    "fish-heading"
+    "fish-shop-now"
+    "fish-img";
+    grid-area: shop-fish;
+
+    &--name {
+        grid-area: fish-heading;
+    }
+
+    &--buy {
+        grid-area: fish-shop-now;
+        text-decoration: none;
+    }
+
+    &--icon {
+        grid-area: fish-img;
+        justify-self: center;
+    }
+
+}
+
+.main-menu__shop-bird {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% 10% 25% auto;
+    grid-template-areas:
+    "bird-heading"
+    "bird-shop-now"
+    "bird-img";
+    grid-area: shop-bird;
+
+    &--name {
+        grid-area: bird-heading;
+    }
+
+    &--buy {
+        grid-area: bird-shop-now;
+        text-decoration: none;
+    }
+
+    &--icon {
+        grid-area: bird-img;
+        justify-self: center;
+    }
+
+}
